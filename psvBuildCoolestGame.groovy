@@ -1,6 +1,6 @@
 pipelineJob('psv-build-coolest-game')
 {
-    def git_repository = 'https://${personal_token}@github.com/lmashraf/coolest-game.git'
+    def git_repository = 'https://' + System.getenv('git_token') + '@github.com/lmashraf/coolest-game.git'
 
     description("Pipeline to run Pre-Submit Verification pipeline for Coolest Game Project")
 
