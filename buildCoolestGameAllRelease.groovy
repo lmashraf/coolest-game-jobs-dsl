@@ -1,8 +1,8 @@
-pipelineJob('sv-build-coolest-game')
+pipelineJob('build-coolest-game-all-release')
 {
     def git_repository = 'https://' + System.getenv('git_token') + '@github.com/lmashraf/coolest-game.git'
 
-    description("Pipeline to run Submit Verification pipeline for Coolest Game Project")
+    description("Pipeline to build and test Release version of the Coolest Game Project")
 
     definition
     {
@@ -10,7 +10,7 @@ pipelineJob('sv-build-coolest-game')
             scm {
                 git {
                     remote { url(git_repository) }
-                    scriptPath('./Jenkinsfile')
+                    scriptPath('./pipelines/Jenkinsfile.release')
                     branch('*/master')
                     // Prevents tagging the repo
                     extensions {}
