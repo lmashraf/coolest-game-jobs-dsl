@@ -10,7 +10,7 @@ pipelineJob('build-coolest-game-all-debug')
             scm {
                 git {
                     remote { url(git_repository) }
-                    scriptPath('./pipelines/Jenkinsfile.release')
+                    scriptPath('./pipelines/Jenkinsfile.debug')
                     branch('*/master')
                     // Prevents tagging the repo
                     extensions {}
